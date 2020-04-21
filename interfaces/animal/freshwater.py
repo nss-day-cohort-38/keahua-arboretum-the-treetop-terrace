@@ -1,4 +1,4 @@
-from interfaces.aquatic import IAquatic
+from interfaces.habitat.aquatic import IAquatic
 
 class IFreshwater(IAquatic):
 
