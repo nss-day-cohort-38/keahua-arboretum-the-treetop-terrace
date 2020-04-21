@@ -4,13 +4,13 @@ from interfaces import IContainsAnimals
 from interfaces import IContainsPlants
 from animals import RiverDolphin
 
-
-class River(IContainsAnimals, IContainsPlants, Identifiable):
+class River(IContainsAnimals, IContainsPlants, Identifiable, IAquatic):
 
     def __init__(self):
       IContainsAnimals.__init__(self)
       IContainsPlants.__init__(self)
       Identifiable.__init__(self)
+      IAquatic.__init__(self)
 
     def add_animal(self, animal):
         try:
