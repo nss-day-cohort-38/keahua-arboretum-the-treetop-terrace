@@ -12,4 +12,4 @@ class RainbowEucalyptusTree(Plant, Identifiable):
         self.possible_locations = ["Forest"]
     
     def __str__(self):
-        return f'Rainbow Eucalyptus Tree [{self.id}]'
+        return f'Rainbow Eucalyptus Tree [{self.id.hex[:8]}]'
