@@ -1,5 +1,6 @@
 import os
 from environments import River
+# from index import build_menu
 
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -14,5 +15,6 @@ def annex_habitat(arboretum):
         river = River()
         arboretum.rivers.append(river)
         print('river added')
+        # build_menu()
     if choice == "2":
         pass
