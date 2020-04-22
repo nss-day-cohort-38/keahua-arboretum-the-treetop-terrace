@@ -26,6 +26,7 @@ def list_environments (locations, plant):
     if len(locations) == 0:
         print("****   No biomes found please try again  ****")
         
+        
     else:
         for location in locations:
             print(f"{counter}. {location} ({len(location.plants)} plants)")
