@@ -12,4 +12,4 @@ class MountainAppleTree(Plant, Identifiable):
         self.possible_locations = ["Mountain"]
     
     def __str__(self):
-        return f'Mountain Apple Tree [{self.id}]'
+        return f'Mountain Apple Tree [{self.id.hex[:8]}]'
