@@ -1,5 +1,5 @@
 import os
-from .list_enviroments_for_plants import list_enviroments_for_plants
+from .list_environments_for_plants import list_environments_for_plants
 from plants import BlueJadeVine
 from plants import MountainAppleTree
 from plants import RainbowEucalyptusTree
@@ -16,18 +16,18 @@ def add_plant(arboretum):
 
     if choice == "1":
         bjv = BlueJadeVine()
-        list_enviroments_for_plants(arboretum, bjv)
+        list_environments_for_plants(arboretum, bjv)
 
         
     if choice == "2":
         moap = MountainAppleTree()
-        list_enviroments_for_plants(arboretum, moap)
+        list_environments_for_plants(arboretum, moap)
     
     if choice == "3":
         ret = RainbowEucalyptusTree()
-        list_enviroments_for_plants(arboretum, ret)
+        list_environments_for_plants(arboretum, ret)
     
     if choice == "4":
         ss = SilverSword()
-        list_enviroments_for_plants(arboretum, ss)
+        list_environments_for_plants(arboretum, ss)
 

@@ -1,6 +1,8 @@
 import os
 from environments import River, Swamp, Coastline, Grassland, Mountain, Forest
 
+
+
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
     print("1. River")
