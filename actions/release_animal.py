@@ -1,4 +1,13 @@
 from animals import RiverDolphin
+# from animals import Dragonfly
+# from animals import NeneGoose
+# from animals import Kikakapu
+# from animals import Pueo
+# from animals import Ulae
+# from animals import Opeapea
+# from animals import HappyFaceSpider
+
+import os
 
 def release_animal(arboretum):
     animal = None
@@ -40,11 +49,15 @@ def release_animal(arboretum):
 
 
     for index, river in enumerate(arboretum.rivers):
-        print(f'{index + 1}. River {river.id}')
+        print(f'{index + 1}. River [{river.id.hex[:8]}]')
+
+    # for index, swamp in enumerate(arboretum.swamps):
+    #     print(f'{index + 2}. Swamp {swamp.id}')
 
     print("Release the animal into which biome?")
     choice = input("> ")
 
     arboretum.rivers[int(choice) - 1].animals.append(animal)
+    # arboretum.swamps[int(choice) - 2].animals.append(animal)
 
 
