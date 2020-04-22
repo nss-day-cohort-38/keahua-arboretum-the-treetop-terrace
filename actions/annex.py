@@ -17,15 +17,6 @@ def annex_habitat(arboretum):
     if choice == "1":
         river = River()
         arboretum.rivers.append(river)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-=======
-        print('river added')
-        # build_menu()
->>>>>>> 2f7d2fabf80462446bfe2f45679a11bf80b5c0c4
-=======
->>>>>>> 195ab4cf6f4519444dd669eb3efd85c0fb34bab4
     if choice == "2":
         swamp = Swamp()
         arboretum.swamps.append(swamp)

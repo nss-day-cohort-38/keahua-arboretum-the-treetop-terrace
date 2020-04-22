@@ -7,14 +7,9 @@ class Arboretum:
         self.__mountains = []
         self.__swamps = []
         self.__forests = []
-<<<<<<< HEAD
-        self.environments = [self.rivers, self.grasslands, self.mountains, self.swamps, self.forests]
-
-=======
         self.__coastlines = []
         self.master = [self.__rivers, self.__grasslands, self.__mountains, self.__swamps, self.__forests, self.__coastlines]
     
->>>>>>> 2f7d2fabf80462446bfe2f45679a11bf80b5c0c4
     @property
     def rivers(self):
         return self.__rivers
