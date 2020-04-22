@@ -23,7 +23,7 @@ def feed_animal(arboretum):
         print("")
 
     if choice == 2:
-        print("")
+        food_dolphin()
 
     if choice == 3:
         print("")
@@ -43,5 +43,13 @@ def feed_animal(arboretum):
     if choice == 8:
         print("")
 
-def food_menu():
-    print("menu")
+def food_dolphin():
+    print("1. Trout")
+    print("2. Mackarel")
+    print("3. Salmon")
+    print("4. Sardine")
+
+    choice = input("What is on the menu for the River Dolphin today?")
+
+    if choice == 1:
+        RiverDolphin.feed("Trout")
