@@ -5,25 +5,25 @@ def list_enviroments_for_plants(arboretum, plant):
     os.system('cls' if os.name == 'nt' else 'clear')
     if plant.species == "Blue Jade Vine":
         print(plant)
-        sys.exit()
+        # sys.exit()
         locations = arboretum.grasslands + arboretum.swamps
         list_enviroments(locations, plant)
 
     elif plant.species == "Rainbow Eucalyptus Tree":
         print(plant)
-        sys.exit()
+        # sys.exit()
         locations = arboretum.forests
         list_enviroments(locations, plant)
 
     elif plant.species == "Mountain Apple Tree":
         print(plant)
-        sys.exit()
+        # sys.exit()
         locations= arboretum.mountains
         list_enviroments(locations, plant)
 
     elif plant.species == "Silversword":
         print(plant)
-        sys.exit()
+        # sys.exit()
         locations = arboretum.grasslands
         list_enviroments(locations, plant)
 
@@ -34,7 +34,7 @@ def list_enviroments (locations, plant):
     os.system('cls' if os.name == 'nt' else 'clear')
     if len(locations) == 0:
         print("****   No biomes found please try again  ****")
-        sys.exit()
+        # sys.exit()
 
     for location in locations:
         print(f"{counter}. {location} ({len(location.plants)} plants)")
