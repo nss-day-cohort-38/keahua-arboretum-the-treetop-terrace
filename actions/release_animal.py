@@ -1,5 +1,4 @@
 from animals import RiverDolphin
-# from animals import Dragonfly
 # from animals import NeneGoose
 # from animals import Kikakapu
 # from animals import Pueo
@@ -13,13 +12,12 @@ def release_animal(arboretum):
     animal = None
 
     print("1. River Dolphin")
-    print("2. Dragonfly")
-    print("3. Nene Goose")
-    print("4. Kikakapu")
-    print("5 Pueo")
-    print("6. Ulae")
-    print("7. Ope'ape'a")
-    print("8. Happy-Face Spider")
+    print("2. Nene Goose")
+    print("3. Kikakapu")
+    print("4 Pueo")
+    print("5. Ulae")
+    print("6. Ope'ape'a")
+    print("7. Happy-Face Spider")
 
     choice = input("Choose animal to release > ")
 
@@ -27,24 +25,21 @@ def release_animal(arboretum):
         animal = RiverDolphin()
 
     if choice == "2":
-        animal = Dragonfly()
-
-    if choice == "3":
         animal = NeneGoose()
 
-    if choice == "4":
+    if choice == "3":
         animal = Kikakapu()
 
-    if choice == "5":
+    if choice == "4":
         animal = Pueo()
 
-    if choice == "6":
+    if choice == "5":
         animal = Ulae()
 
-    if choice == "7":
+    if choice == "6":
         animal = Opeapea()
 
-    if choice == "8":
+    if choice == "7":
         animal = HappyFaceSpider()
 
 
