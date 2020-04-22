@@ -43,7 +43,7 @@ def feed_animal(arboretum):
     if choice == 8:
         print("")
 
-def food_dolphin():
+def food_dolphin(arboretum):
     print("1. Trout")
     print("2. Mackarel")
     print("3. Salmon")
