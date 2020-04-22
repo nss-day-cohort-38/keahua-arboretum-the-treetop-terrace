@@ -19,4 +19,4 @@ class HappyFaceSpider(Animal, IWalking, Identifiable):
             print(f'The spider rejects the {food}')
 
     def __str__(self):
-        return f'Hawaiian Happy Faced Spider {self.id}. Silence... '
+        return f'Hawaiian Happy Faced Spider [{self.id.hex[:8]}]. Silence... '

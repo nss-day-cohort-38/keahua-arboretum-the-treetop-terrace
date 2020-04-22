@@ -20,4 +20,4 @@ class GoldDustGecko(Animal, Identifiable, IWalking):
             print(f'The gecko rejects the {food}')
 
     def __str__(self):
-        return f'Gold Dust Day Gecko {self.id}. Silence...'
+        return f'Gold Dust Day Gecko [{self.id.hex[:8]}]. Silence...'

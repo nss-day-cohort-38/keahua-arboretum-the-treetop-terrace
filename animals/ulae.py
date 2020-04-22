@@ -22,4 +22,4 @@ class Ulae(Animal, Identifiable, ISwimming, ISaltwater):
 
 
     def __str__(self):
-        return f'Ulae (Red Lizardfish) {self.id}. Sound does not travel well under water.'
+        return f'Ulae (Red Lizardfish) [{self.id.hex[:8]}]. Sound does not travel well under water.'

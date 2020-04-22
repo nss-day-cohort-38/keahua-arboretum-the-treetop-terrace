@@ -22,4 +22,4 @@ class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
 
 
     def __str__(self):
-        return f'River Dolphin {self.id}. Eeee EeeEEeeeeEE!'
+        return f'River Dolphin [{self.id.hex[:8]}]. Eeee EeeEEeeeeEE!'

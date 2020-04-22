@@ -20,5 +20,5 @@ class Opeapea(Animal, Identifiable, IFlying):
             print(f'The bat rejects the {food}')
 
     def __str__(self):
-        return f'Opeapea (Hawaiian Hoary Bat) {self.id}. Screeeee!'
+        return f'Opeapea (Hawaiian Hoary Bat) [{self.id.hex[:8]}]. Screeeee!'
 

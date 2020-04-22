@@ -22,6 +22,6 @@ class Kikakapu(Animal, IFreshwater, Identifiable, ISwimming):
 
 
     def __str__(self):
-        return f'Kikakapu (Ornate Butterflyfish) {self.id}. Sound does not travel well under water.'
+        return f'Kikakapu (Ornate Butterflyfish) [{self.id.hex[:8]}]. Sound does not travel well under water.'
 
 

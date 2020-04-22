@@ -23,4 +23,4 @@ class NeneGoose(Animal, Identifiable, IFlying, IWalking):
             print(f'The goose rejects the {food}')
 
     def __str__(self):
-        return f'Nene Goose {self.id}. HONK!!'
+        return f'Nene Goose [{self.id.hex[:8]}]. HONK!!'

@@ -20,4 +20,4 @@ class Pueo(Animal, Identifiable, IFlying):
             print(f'The owl rejects the {food}')
 
     def __str__(self):
-        return f'Pueo owl {self.id}. Hoo HOO! Hoo HOO!'
+        return f'Pueo owl [{self.id.hex[:8]}]. Hoo HOO! Hoo HOO!'
