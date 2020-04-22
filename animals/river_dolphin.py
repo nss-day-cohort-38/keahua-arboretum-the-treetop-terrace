@@ -1,25 +1,25 @@
 from animals import Animal
-from interfaces.animal import IFreshwater
-from interfaces import Identifiable
+from interfaces import IFreshwater, Identifiable, ISwimming
 
-class RiverDolphin(Animal, IFreshwater, Identifiable):
+class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
 
     def __init__(self):
         Animal.__init__(self, "River dolphin")
         IFreshwater.__init__(self)
         Identifiable.__init__(self)
-        self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        ISwimming.__init__(self)
+        self.__food = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
     @property
-    def prey(self):
-        return self.__prey
+    def food(self):
+        return self.__food
 
-    def feed(self, prey):
-        if prey in self.__prey:
-            print(f'The dolphin ate {prey} for a meal')
+    def feed(self, food):
+        if food in self.__food:
+            print(f'The dolphin ate {food} for a meal')
         else:
-            print(f'The dolphin rejects the {prey}')
+            print(f'The dolphin rejects the {food}')
 
 
     def __str__(self):
-        return f'Dolphin {self.id}. Eeee EeeEEeeeeEE!'
+        return f'River Dolphin [{self.id.hex[:8]}]. Eeee EeeEEeeeeEE!'

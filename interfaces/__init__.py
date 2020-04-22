@@ -1,5 +1,6 @@
 from interfaces.habitat.terrestrial import ITerrestrial
 from .animal.freshwater import IFreshwater
+from .animal.saltwater import ISaltwater
 from interfaces.habitat.aquatic import IAquatic
 from .animal.flying import IFlying
 from .animal.walking import IWalking
