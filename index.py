@@ -1,13 +1,8 @@
 import os
 from arboretum import Arboretum
 from actions.annex import annex_habitat
-<<<<<<< HEAD
-from actions.release_animal import release_animal
-# from actions.report import build_facility_report
-=======
 # from actions.release_animal import release_animal
 from actions.report import build_facility_report
->>>>>>> master
 from plants import add_plant
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
@@ -44,14 +39,8 @@ def main_menu():
         add_plant(keahua)
 
     if choice == "5":
-<<<<<<< HEAD
-        # build_facility_report(keahua)
-        pass
-
-=======
         build_facility_report(keahua)
         
->>>>>>> master
     if choice != "6":
         main_menu()
 
