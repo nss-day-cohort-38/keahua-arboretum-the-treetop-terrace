@@ -18,6 +18,7 @@ def feed_animal(arboretum):
         print("")
 
     if choice == 2:
+        print("hello")
         food_dolphin()
 
     if choice == 3:
