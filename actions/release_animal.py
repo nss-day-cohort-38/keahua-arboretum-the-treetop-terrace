@@ -46,8 +46,8 @@ def release_animal(arboretum):
     for index, river in enumerate(arboretum.rivers):
         print(f'{index + 1}. River [{river.id.hex[:8]}]')
 
-    # for index, swamp in enumerate(arboretum.swamps):
-    #     print(f'{index + 2}. Swamp {swamp.id}')
+    for index, swamp in enumerate(arboretum.swamps):
+        print(f'{index + 2}. Swamp {swamp.id}')
 
     print("Release the animal into which biome?")
     choice = input("> ")
