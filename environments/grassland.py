@@ -34,4 +34,4 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
     #         self.inhabitants.append(item)
 
     def __str__(self):
-        return f'Grassland [{self.id}]'
+        return f'Grassland [{self.id.hex[:8]}]'

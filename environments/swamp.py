@@ -32,4 +32,4 @@ class Swamp(Environment, IStagnant, IAquatic, Identifiable, IContainsAnimals, IC
             self.inhabitants.append(item)
 
     def __str__(self):
-        return f'Swamp [{self.id}]'
+        return f'Swamp [{self.id.hex[:8]}]'

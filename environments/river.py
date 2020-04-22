@@ -29,4 +29,4 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
             raise AttributeError("Cannot add plants that require brackish water or stagnant water to a river biome")
 
     def __str__(self):
-        return f'River [{self.id}]'
+        return f'River [{self.id.hex[:8]}]'

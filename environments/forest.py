@@ -18,4 +18,4 @@ class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShad
         self.animal_capacity = 20
 
     def __str__(self):
-        return f'Forest [{self.id}]'
+        return f'Forest [{self.id.hex[:8]}]'

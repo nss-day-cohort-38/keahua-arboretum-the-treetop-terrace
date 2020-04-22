@@ -17,4 +17,4 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
         self.animal_capacity = 6
 
     def __str__(self):
-        return f'Mountain [{self.id}]'
+        return f'Mountain [{self.id.hex[:8]}]'

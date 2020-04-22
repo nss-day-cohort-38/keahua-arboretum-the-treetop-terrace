@@ -18,5 +18,5 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.animal_capacity = 15
 
     def __str__(self):
-        return f'Coastline [{self.id}]'
+        return f'Coastline [{self.id.hex[:8]}]'
         
