@@ -1,4 +1,11 @@
-
+from animals import RiverDolphin
+from animals import GoldDustGecko
+from animals import NeneGoose
+from animals import Kikakapu
+from animals import Pueo
+from animals import Ulae
+from animals import Opeapea
+from animals import HappyFaceSpider
 
 def feed_animal(arboretum):
     print("1. Gold Dust Day Gecko")
@@ -35,3 +42,6 @@ def feed_animal(arboretum):
 
     if choice == 8:
         print("")
+
+def food_menu():
+    print("menu")
