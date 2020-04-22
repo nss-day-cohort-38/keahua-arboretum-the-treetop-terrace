@@ -1,13 +1,8 @@
-from animals import RiverDolphin
-from animals import GoldDustGecko
-from animals import NeneGoose
-from animals import Kikakapu
-from animals import Pueo
-from animals import Ulae
-from animals import Opeapea
-from animals import HappyFaceSpider
+from animals import RiverDolphin, GoldDustGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
+import os 
 
 def feed_animal(arboretum):
+    os.system('cls' if os.name == 'nt' else 'clear')
     print("1. Gold Dust Day Gecko")
     print("2. River Dolphin")
     print("3. Nene Goose")
