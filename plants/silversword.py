@@ -12,4 +12,4 @@ class SilverSword(Plant, Identifiable):
         self.possible_locations = ["Grassland"]
     
     def __str__(self):
-        return f'Silversword [{self.id}]'
+        return f'Silversword [{self.id.hex[:8]}]'
