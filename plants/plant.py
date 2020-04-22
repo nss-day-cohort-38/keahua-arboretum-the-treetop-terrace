@@ -4,5 +4,3 @@ class Plant:
       self.species = species
       self.peak_season = season
     
-    def add_plant(self, habitat):
-      habitat.plants.append(self)
