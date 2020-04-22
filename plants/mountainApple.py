@@ -1,4 +1,4 @@
-from plant import Plant
+from .plant import Plant
 from interfaces import Identifiable
 
 class MountainAppleTree(Plant, Identifiable):
