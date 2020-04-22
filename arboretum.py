@@ -7,6 +7,8 @@ class Arboretum:
         self.__mountains = []
         self.__swamps = []
         self.__forests = []
+        self.__coastlines = []
+        self.master = [self.__rivers, self.__grasslands, self.__mountains, self.__swamps, self.__forests, self.__coastlines]
     
     @property
     def rivers(self):
@@ -42,4 +44,11 @@ class Arboretum:
     
     def annex_forest(self, forest):
         self.__forests.append(forest)
+
+    @property
+    def coastlines(self):
+        return self.__coastlines
     
+    def annex_coastline(self, coastline):
+        self.__coastlines.append(coastline)
+
