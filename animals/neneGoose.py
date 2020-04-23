@@ -8,15 +8,15 @@ class NeneGoose(Animal, Identifiable, IFlying, IWalking):
         Identifiable.__init__(self)
         IFlying.__init__(self)
         IWalking.__init__(self)
-        self.__food = { "Grass", "Weeds", "Ohelo Berries" }
+        self.__food = ("Grass", "Weeds", "Ohelo Berries" )
 
     @property
     def food(self):
         return self.__food
 
     def feed(self, food):
-        if food == "Oleho Berries":
-            print('The goose loves oleho berries!')
+        if food == "Ohelo Berries":
+            print('The goose loves ohelo berries!')
         elif food in self.__food:
             print(f'The goose ate {food} for a meal')
         else:
