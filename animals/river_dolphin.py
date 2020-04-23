@@ -8,7 +8,7 @@ class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
         IFreshwater.__init__(self)
         Identifiable.__init__(self)
         ISwimming.__init__(self)
-        self.__food = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.__food = ("Trout", "Mackarel", "Salmon", "Sardine")
 
     @property
     def food(self):

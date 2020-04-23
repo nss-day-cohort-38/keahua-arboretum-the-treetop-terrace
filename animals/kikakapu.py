@@ -8,7 +8,7 @@ class Kikakapu(Animal, IFreshwater, Identifiable, ISwimming):
         IFreshwater.__init__(self)
         Identifiable.__init__(self)
         ISwimming.__init__(self)
-        self.__food = { "Blue Coral" , "Green Coral" }
+        self.__food = ( "Blue Coral" , "Green Coral" )
 
     @property
     def food(self):
