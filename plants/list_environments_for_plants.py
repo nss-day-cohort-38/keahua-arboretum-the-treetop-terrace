@@ -32,9 +32,31 @@ def list_environments (locations, plant):
             print(f"{counter}. {location} ({len(location.plants)} plants)")
             counter += 1
         choice = input("Choose your environment > ")
-        print(type(int(choice)))
-
         
+        if RepresentsInt(choice) == True:
+            num = int(choice)-1
+            if len(locations[num].plants) == locations[num].plant_capacity:
+                print("****   That biome is not large enough   ****")
+                print("****     Please choose another one      ****")
+                list_environments(locations, plant)
+            else:
+                locations[num].plants.append(plant)
+                print(f"The {plant.species} was added to {locations[num]}")
+                input("\n\nPress any key to continue...")
+    
+
+
+
+def RepresentsInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        print ("Please enter a number...")
+        input("\n\nPress any key to continue...")
+
+
+        # print(type(int(choice)))
         # num = int(choice)-1
         # if len(locations[num].plants) == locations[num].plant_capacity:
         #     print("****   That biome is not large enough   ****")
@@ -45,22 +67,3 @@ def list_environments (locations, plant):
         #     print(f"The {plant.species} was added to {locations[num]}")
         #     input("\n\nPress any key to continue...")
 
-
-        
-        if type(int(choice)) is int:
-            num = int(choice)-1
-            if len(locations[num].plants) == locations[num].plant_capacity:
-                print("****   That biome is not large enough   ****")
-                print("****     Please choose another one      ****")
-                list_environments(locations, plant)
-            else:
-                locations[num].plants.append(plant)
-                print(f"The {plant.species} was added to {locations[num]}")
-                input("\n\nPress any key to continue...")
-        else:
-            raise TypeError("Please Enter a number...")
-            # print("Please enter a number...")
-            input("\n\nPress any key to continue...")
-
-
-    
