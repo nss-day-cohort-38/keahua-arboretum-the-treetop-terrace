@@ -1,13 +1,15 @@
 from animals import Animal
-from interfaces import IFreshwater, Identifiable, ISwimming
+from interfaces import IFreshwater, Identifiable, ISwimming, IBiome
 
-class Kikakapu(Animal, IFreshwater, Identifiable, ISwimming):
+class Kikakapu(Animal, IFreshwater, Identifiable, ISwimming, IBiome):
 
     def __init__(self):
         Animal.__init__(self, "Kikakapu")
         IFreshwater.__init__(self)
         Identifiable.__init__(self)
         ISwimming.__init__(self)
+        IBiome.__init__(self, False, False, False, True, True, False)
+
         self.__food = ( "Blue Coral" , "Green Coral" )
 
     @property

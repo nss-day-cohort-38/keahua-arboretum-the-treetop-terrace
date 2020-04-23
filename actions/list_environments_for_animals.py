@@ -2,38 +2,69 @@ import os
 import sys
 
 def list_environments_for_animals(arboretum, animal):
-    if animal.species == "River Dolphin":
-        locations = arboretum.rivers + arboretum.coastlines
-        list_environments(locations, animal)
+    
+    if animal.canMountain and animal.canForest:
+        return list_environments(arboretum.forests + arboretum.mountains, animal)
 
-    elif animal.species == "Nene Goose":
-        locations = arboretum.grasslands
-        list_environments(locations, animal)
+    elif animal.canMountain and animal.canGrassland:
+        return list_environments(arboretum.grasslands + arboretum.mountains, animal)
 
-    elif animal.species == "Hawaiian Happy Face Spider":
-        locations= arboretum.swamps
-        list_environments(locations, animal)
+    elif animal.canMountain and animal.canRiver:
+        return list_environments(arboretum.rivers + arboretum.mountains, animal)
 
-    elif animal.species == "Gold Dust Day Gecko":
-        locations = arboretum.forests
-        list_environments(locations, animal)
+    elif animal.canMountain and animal.canSwamp:
+        return list_environments(arboretum.swamps + arboretum.mountains, animal)
 
-    elif animal.species == "Kikakapu":
-        locations = arboretum.swamps + arboretum.rivers
-        list_environments(locations, animal)
+    elif animal.canMountain and animal.canCoastline:
+        return list_environments(arboretum.coastlines + arboretum.mountains, animal)
 
-    elif animal.species == "Opeapea":
-        locations = arboretum.forests + arboretum.mountains
-        list_environments(locations, animal)
+    elif animal.canGrassland and animal.canForest:
+        return list_environments(arboretum.forests + arboretum.grasslands, animal)
 
-    elif animal.species == "Pueo":
-        locations = arboretum.grasslands + arboretum.forests
-        list_environments(locations, animal)
+    elif animal.canGrassland and animal.canRiver:
+        return list_environments(arboretum.rivers + arboretum.grasslands, animal)
 
-    elif animal.species == "Ulae":
-        locations = arboretum.coastlines
-        list_environments(locations, animal)
+    elif animal.canGrassland and animal.canSwamp:
+        return list_environments(arboretum.swamps + arboretum.grasslands, animal)
 
+    elif animal.canGrassland and animal.canCoastline:
+        return list_environments(arboretum.coastlines + arboretum.grasslands, animal)
+
+    elif animal.canForest and animal.canRiver:
+        return list_environments(arboretum.rivers + arboretum.forests, animal)
+
+    elif animal.canForest and animal.canSwamp:
+        return list_environments(arboretum.swamps + arboretum.forests, animal)
+
+    elif animal.canForest and animal.canCoastline:
+        return list_environments(arboretum.coastlines + arboretum.forests, animal)
+
+    elif animal.canRiver and animal.canSwamp:
+        return list_environments(arboretum.swamps + arboretum.rivers, animal)
+
+    elif animal.canRiver and animal.canCoastline:
+        return list_environments(arboretum.coastlines + arboretum.rivers, animal)
+
+    elif animal.canCoastline and animal.canSwamp:
+        return list_environments(arboretum.swamps + arboretum.coastlines, animal)
+
+    elif animal.canGrassland:
+        return list_environments(arboretum.grasslands, animal)
+
+    elif animal.canMountain:
+        return list_environments(arboretum.mountains, animal)
+
+    elif animal.canForest:
+        return list_environments(arboretum.forests, animal)
+
+    elif animal.canRiver:
+        return list_environments(arboretum.rivers, animal)
+
+    elif animal.canSwamp:
+        return list_environments(arboretum.swamps, animal)
+
+    elif animal.canCoastline:
+        return list_environments(arboretum.coastlines, animal)
 
 
 def list_environments (locations, animal):

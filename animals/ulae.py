@@ -1,13 +1,14 @@
 from animals import Animal
-from interfaces import IAquatic, Identifiable, ISwimming, ISaltwater
+from interfaces import IAquatic, Identifiable, ISwimming, ISaltwater, IBiome
 
-class Ulae(Animal, Identifiable, ISwimming, ISaltwater):
+class Ulae(Animal, Identifiable, ISwimming, ISaltwater, IBiome):
     
     def __init__(self):
         Animal.__init__(self, "Ulae")
         Identifiable.__init__(self)
         ISwimming.__init__(self)
         ISaltwater.__init__(self)
+        IBiome.__init__(self, False, False, False, False, False, True)
         self.__food = ( "Squid", "Bait Fish")
 
     @property

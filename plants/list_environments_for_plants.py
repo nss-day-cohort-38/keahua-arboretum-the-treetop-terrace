@@ -1,21 +1,35 @@
 import os
 import sys
 
-def list_environments_for_plants(arboretum, plant):
-    if plant.species == "Blue Jade Vine":
-        locations = arboretum.grasslands + arboretum.swamps
-        list_environments(locations, plant)
 
-    elif plant.species == "Rainbow Eucalyptus Tree":
+def list_environments_for_plants(arboretum, plant):
+   
+
+    if plant.low_light and plant.med_water:
         locations = arboretum.forests
         list_environments(locations, plant)
 
-    elif plant.species == "Mountain Apple Tree":
+    elif plant.full_light and plant.med_water:
         locations= arboretum.mountains
         list_environments(locations, plant)
 
-    elif plant.species == "Silversword":
+    elif plant.full_light and plant.low_water:
         locations = arboretum.grasslands
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.partial_light:
+        locations = arboretum.rivers
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.low_light:
+        locations = arboretum.swamps
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.full_light:
+        locations = arboretum.coastlines
+        list_environments(locations, plant)
+    elif plant.all_light and plant.all_water:
+        locations = arboretum.grasslands + arboretum.swamps
         list_environments(locations, plant)
 
 
@@ -32,7 +46,8 @@ def list_environments (locations, plant):
             print(f"{counter}. {location} ({len(location.plants)} plants)")
             counter += 1
         choice = input("Choose your environment > ")
-        try:
+        
+        if RepresentsInt(choice) == True:
             num = int(choice)-1
             if len(locations[num].plants) == locations[num].plant_capacity:
                 print("****   That biome is not large enough   ****")
@@ -40,9 +55,29 @@ def list_environments (locations, plant):
                 list_environments(locations, plant)
             else:
                 locations[num].plants.append(plant)
-        except TypeError:
-            print("Please enter a number...")
-            input("\n\nPress any key to continue...")
-
-
+                print(f"The {plant.species} was added to {locations[num]}")
+                input("\n\nPress any key to continue...")
     
+
+
+
+def RepresentsInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        print ("Please enter a number...")
+        input("\n\nPress any key to continue...")
+
+
+        # print(type(int(choice)))
+        # num = int(choice)-1
+        # if len(locations[num].plants) == locations[num].plant_capacity:
+        #     print("****   That biome is not large enough   ****")
+        #     print("****     Please choose another one      ****")
+        #     list_environments(locations, plant)
+        # else:
+        #     locations[num].plants.append(plant)
+        #     print(f"The {plant.species} was added to {locations[num]}")
+        #     input("\n\nPress any key to continue...")
+
