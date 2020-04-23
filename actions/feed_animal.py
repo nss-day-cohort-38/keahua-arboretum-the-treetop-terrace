@@ -47,6 +47,8 @@ def feed_animal(arboretum):
         feed_menu(spider)
 
 def feed_menu(animal):
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     counter = 1
     for food in animal.food:
         print(f"{counter}. {food}")
