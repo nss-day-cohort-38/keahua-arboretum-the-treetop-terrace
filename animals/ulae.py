@@ -8,7 +8,7 @@ class Ulae(Animal, Identifiable, ISwimming, ISaltwater):
         Identifiable.__init__(self)
         ISwimming.__init__(self)
         ISaltwater.__init__(self)
-        self.__food = { "Squid", "Bait Fish"}
+        self.__food = ( "Squid", "Bait Fish")
 
     @property
     def food(self):

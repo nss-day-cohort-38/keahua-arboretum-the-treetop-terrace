@@ -7,7 +7,7 @@ class Opeapea(Animal, Identifiable, IFlying):
         Animal.__init__(self, "Opeapea")
         Identifiable.__init__(self)
         IFlying.__init__(self)
-        self.__food = { "Mosquito", "Beetle", "Berry" }
+        self.__food = ("Mosquito", "Beetle", "Berry" )
 
     @property
     def food(self):
