@@ -1,12 +1,13 @@
 from animals import Animal
-from interfaces import Identifiable, IWalking
+from interfaces import Identifiable, IWalking, IBiome
 
-class GoldDustGecko(Animal, Identifiable, IWalking):
+class GoldDustGecko(Animal, Identifiable, IWalking, IBiome):
 
     def __init__(self):
         Animal.__init__(self, "Gold Dust Day Gecko")
         Identifiable.__init__(self)
         IWalking.__init__(self)
+        IBiome.__init__(self, False, False, True, False, False, False)
         self.__food = ( "Mosquito", "House Fly", "Spider" )
 
     @property

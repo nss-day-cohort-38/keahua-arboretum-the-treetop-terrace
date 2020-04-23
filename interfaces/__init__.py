@@ -13,3 +13,7 @@ from .habitat.elevation import IElevation
 from .habitat.rain import IRain
 from .habitat.shade import IShade
 from .habitat.stagnant import IStagnant
+from .plant.ILight import ILight
+from .plant.IWater import IWater
+from .animal import IBiome
+
