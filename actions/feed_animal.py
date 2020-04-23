@@ -14,37 +14,48 @@ def feed_animal(arboretum):
 
     choice = input("Choose animal to feed >")
 
-    if choice == 1:
-        print("")
+    if choice == "1":
+        gecko = GoldDustGecko()
+        feed_menu(gecko)
 
     if choice == "2":
-        food_dolphin()
+        dolphin = RiverDolphin()
+        feed_menu(dolphin)
 
-    if choice == 3:
-        print("")
+    if choice == "3":
+        nene = NeneGoose()
+        feed_menu(nene)
 
-    if choice == 4:
-        print("")
+    if choice == "4":
+        kikakapu = Kikakapu()
+        feed_menu(kikakapu)
 
-    if choice == 5:
-        print("")
+    if choice == "5":
+        pueo = Pueo()
+        feed_menu(pueo)
 
-    if choice == 6:
-        print("")
+    if choice == "6":
+        ulae = Ulae()
+        feed_menu(ulae)
 
-    if choice == 7:
-        print("")
+    if choice == "7":
+        opeapea = Opeapea()
+        feed_menu(opeapea)
 
-    if choice == 8:
-        print("")
+    if choice == "8":
+        spider = HappyFaceSpider()
+        feed_menu(spider)
 
-def food_dolphin():
-    print("1. Trout")
-    print("2. Mackarel")
-    print("3. Salmon")
-    print("4. Sardine")
+def feed_menu(animal):
+    counter = 1
+    for food in animal.food:
+        print(f"{counter}. {food}")
+        counter += 1
 
-    choice = input("What is on the menu for the River Dolphin today?")
+    choice = input(f"What is on the menu for the {animal.species} today?")
 
-    if choice == "1":
-        RiverDolphin.feed("Trout")
+    number = int(choice) -1
+    
+    animal.feed(animal.food[number])
+
+    input("\n\nPress any key to continue...")

@@ -7,7 +7,7 @@ class Pueo(Animal, Identifiable, IFlying):
         Animal.__init__(self, "Pueo")
         Identifiable.__init__(self)
         IFlying.__init__(self)
-        self.__food = {"Mouse", "Rat"}
+        self.__food = ("Mouse", "Rat")
 
     @property
     def food(self):
