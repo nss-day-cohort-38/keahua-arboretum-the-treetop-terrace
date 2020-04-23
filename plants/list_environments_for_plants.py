@@ -1,21 +1,35 @@
 import os
 import sys
 
-def list_environments_for_plants(arboretum, plant):
-    if plant.species == "Blue Jade Vine":
-        locations = arboretum.grasslands + arboretum.swamps
-        list_environments(locations, plant)
 
-    elif plant.species == "Rainbow Eucalyptus Tree":
+def list_environments_for_plants(arboretum, plant):
+   
+
+    if plant.low_light and plant.med_water:
         locations = arboretum.forests
         list_environments(locations, plant)
 
-    elif plant.species == "Mountain Apple Tree":
+    elif plant.full_light and plant.med_water:
         locations= arboretum.mountains
         list_environments(locations, plant)
 
-    elif plant.species == "Silversword":
+    elif plant.full_light and plant.low_water:
         locations = arboretum.grasslands
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.partial_light:
+        locations = arboretum.rivers
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.low_light:
+        locations = arboretum.swamps
+        list_environments(locations, plant)
+
+    elif plant.high_water and plant.full_light:
+        locations = arboretum.coastlines
+        list_environments(locations, plant)
+    elif plant.all_light and plant.all_water:
+        locations = arboretum.grasslands + arboretum.swamps
         list_environments(locations, plant)
 
 

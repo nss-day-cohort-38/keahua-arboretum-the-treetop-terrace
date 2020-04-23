@@ -3,3 +3,4 @@ from .flying import IFlying
 from .saltwater import ISaltwater
 from .swimming import ISwimming
 from .walking import IWalking
+from .biomes import IBiome
