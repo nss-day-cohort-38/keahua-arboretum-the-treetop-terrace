@@ -32,6 +32,17 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
     #         raise TypeError(f"{item} is not of type IStagnant")
     #     else:
     #         self.inhabitants.append(item)
+    def add_animal(self, animal):
+        try:
+            if "Rodents" in animal.foodType and animal.flight_speed > -1 \
+                and animal.maxFlightSpeed > 150:
+                self.animals.append(animal)
 
+            if "Vegetation" in animal.foodType and animal.flight_speed > -1 \
+                and animal.isNocturnal == False:
+                self.animals.append(animal)
+        except AttributeError:
+            print("This animal can't be added here.")
+    
     def __str__(self):
         return f'Grassland [{self.id.hex[:8]}]'

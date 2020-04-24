@@ -6,7 +6,7 @@ from animals import Ulae
 from animals import Opeapea
 from animals import HappyFaceSpider
 from animals import GoldDustGecko
-from .list_environments_for_animals import list_environments_for_animals
+from .list_environments_for_animals import build_environment_menu
 
 import os
 
@@ -26,35 +26,35 @@ def release_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "2":
         animal = NeneGoose()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "3":
         animal = Kikakapu()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "4":
         animal = Pueo()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "5":
         animal = Ulae()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "6":
         animal = Opeapea()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "7":
         animal = HappyFaceSpider()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
     if choice == "8":
         animal = GoldDustGecko()
-        list_environments_for_animals(arboretum, animal)
+        build_environment_menu(arboretum, animal)
 
 
     # print("Release the animal into which biome?")

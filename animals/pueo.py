@@ -1,13 +1,15 @@
 from animals import Animal
-from interfaces import Identifiable, IFlying, IBiome
+from interfaces import Identifiable, IFlying, IFoodType, IMaxFlightSpeed, INocturnal
 
-class Pueo(Animal, Identifiable, IFlying, IBiome):
+class Pueo(Animal, Identifiable, IFlying, IFoodType, IMaxFlightSpeed, INocturnal):
 
     def __init__(self):
         Animal.__init__(self, "Pueo")
         Identifiable.__init__(self)
         IFlying.__init__(self)
-        IBiome.__init__(self, False, True, True, False, False, False)
+        IFoodType.__init__(self, "Rodents")
+        IMaxFlightSpeed.__init__(self, 160)
+        INocturnal.__init__(self, True)
         self.__food = ("Mouse", "Rat")
 
     @property

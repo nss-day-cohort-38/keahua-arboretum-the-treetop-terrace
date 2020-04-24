@@ -15,5 +15,7 @@ from .habitat.shade import IShade
 from .habitat.stagnant import IStagnant
 from .plant.ILight import ILight
 from .plant.IWater import IWater
-from .animal import IBiome
+from .animal import IFoodType
+from .animal import IMaxFlightSpeed
+from .animal import INocturnal
 

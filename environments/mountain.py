@@ -18,3 +18,11 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
 
     def __str__(self):
         return f'Mountain [{self.id.hex[:8]}]'
+
+    def add_animal(self, animal):
+        try:
+            if "Vegetation" in animal.foodType and animal.flight_speed > -1 and animal.isNocturnal:
+                self.animals.append(animal)
+        except AttributeError:
+            print("This animal can't be added to this environment")
+    

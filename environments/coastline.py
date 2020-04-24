@@ -17,6 +17,14 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.plant_capacity = 3
         self.animal_capacity = 15
 
+
+    def add_animal(self, animal):
+        try:
+            if "Fish" in animal.foodType and animal.isSaltwater:
+                self.animals.append(animal)
+        except AttributeError:
+            print("This animal can't be added to this environment.")
+
     def __str__(self):
         return f'Coastline [{self.id.hex[:8]}]'
         
