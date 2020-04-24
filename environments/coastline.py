@@ -1,5 +1,5 @@
 from .environment import Environment
-from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, ISaltwater
+from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, ISaltwater, getAmountOfPlantsAndAnimals
 
 # from animals.
 

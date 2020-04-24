@@ -19,5 +19,9 @@ from .animal import IFoodType
 from .animal import IMaxFlightSpeed
 from .animal import INocturnal
 
+from .duplicate import getAmountOfPlantsAndAnimals
+
+
 from .duplicate import getDuplicatesWithCount
+
 

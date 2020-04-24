@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from .environment import Environment
-from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, IStagnant, ITerrestrial
+from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, IStagnant, ITerrestrial, getAmountOfPlantsAndAnimals
 
 # from animals.
 

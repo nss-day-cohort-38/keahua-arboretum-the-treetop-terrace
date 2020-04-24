@@ -1,5 +1,5 @@
 from .environment import Environment
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial, IElevation
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial, IElevation, getAmountOfPlantsAndAnimals
 
 
 class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITerrestrial, IElevation):

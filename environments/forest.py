@@ -1,5 +1,5 @@
 from .environment import Environment
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial, getAmountOfPlantsAndAnimals
 
 
 class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShade, IRain, ITerrestrial):

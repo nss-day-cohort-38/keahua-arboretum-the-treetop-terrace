@@ -1,4 +1,4 @@
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IFreshwater
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, getAmountOfPlantsAndAnimals
 from animals import RiverDolphin
 
 class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
