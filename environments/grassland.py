@@ -77,19 +77,26 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         nameList = []
         for item in aNpList:
             nameList.append(item.species)
-        freqDict = getDuplicatesWithCount(nameList)
-        aNpString = ""
-        counter = 1
-        dictLen = len(freqDict.keys())
-        for key,value in freqDict.items():
-            if counter == dictLen:
-                aNpString += f'{key} {value}'
-                counter +=1
-            else:
-                aNpString += f'{key} {value},'
-                counter +=1
-        return aNpString
+        if len(nameList) == 0:
+            return ""
+        else:
+            freqDict = getDuplicatesWithCount(nameList)
+            aNpString = ""
+            counter = 1
+            dictLen = len(freqDict.keys())
+            for key,value in freqDict.items():
+                if counter == dictLen:
+                    aNpString += f'{key} {value}'
+                    counter +=1
+                else:
+                    aNpString += f'{key} {value},'
+                    counter +=1
+            return aNpString
 
     def __str__(self):
         # animal_and plant_string = self.getAmountOfPlantsAndAnimals()
-        return f'Grassland [{self.id.hex[:8]}] [{self.getAmountOfPlantsAndAnimals()}]'
+        total_list = self.animals + self.plants
+        if len(total_list) == 0:
+            return f'Grassland [{self.id.hex[:8]}]'
+        else:
+            return f'Grassland [{self.id.hex[:8]}] [{self.getAmountOfPlantsAndAnimals()}]'
