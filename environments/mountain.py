@@ -25,4 +25,11 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
                 self.animals.append(animal)
         except AttributeError:
             print("This animal can't be added to this environment")
+
+    def add_plant(self, plant):
+        try:
+            if plant.full_light and plant.med_water:
+                self.plants.append(plant)
+        except:
+            print(f"{plant.species} can't go in tihs habitat")
     

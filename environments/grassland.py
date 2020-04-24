@@ -44,5 +44,12 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         except AttributeError:
             print("This animal can't be added here.")
     
+    def add_plant(self, plant):
+        try:
+            if plant.full_light and plant.low_water or plant.all_light and plant.all_water:
+                self.plants.append(plant)
+        except:
+            print(f"{plant.species} can't go in tihs habitat")
+
     def __str__(self):
         return f'Grassland [{self.id.hex[:8]}]'

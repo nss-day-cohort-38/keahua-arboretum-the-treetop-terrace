@@ -25,6 +25,13 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         except AttributeError:
             print("This animal can't be added to this environment.")
 
+    def add_plant(self, plant):
+        try:
+            if plant.high_water and plant.full_light:
+                self.plants.append(plant)
+        except:
+            print(f"{plant.species} can't go in tihs habitat")
+
     def __str__(self):
         return f'Coastline [{self.id.hex[:8]}]'
         

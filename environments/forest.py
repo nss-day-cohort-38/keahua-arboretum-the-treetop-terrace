@@ -35,7 +35,15 @@ class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShad
             if "Rodents" in animal.foodType and animal.flight_speed > -1:
                 self.animals.append(animal)
 
-        
         except AttributeError:
             print("This animal can't go in this habitat")
+        
+    def add_plant(self, plant):
+        try:
+            if plant.low_light and plant.med_water:
+                self.plants.append(plant)
+        except:
+            print(f"{plant.species} can't go in tihs habitat")
+    
+
         
