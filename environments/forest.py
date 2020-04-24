@@ -45,5 +45,31 @@ class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShad
         except:
             print(f"{plant.species} can't go in tihs habitat")
     
+    def test(self, item):
+        try:
+            if "Insects" in item.foodType :
+                try: 
+                    if item.flight_speed > -1:
+                        if item.isNocturnal:
+                            return True
+                except:
+                    if item.move_speed > -1:
+                        if "Spider" in item.food:
+                            return True
+
+            if "Rodents" in item.foodType and item.flight_speed > -1:
+                return True
+            
+
+        except AttributeError:
+            return False
+    
+    def test_plant(self, item):
+        try:
+            if item.low_light and item.med_water:
+                return True
+
+        except AttributeError:
+            return False
 
         

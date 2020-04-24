@@ -49,7 +49,28 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
             if plant.full_light and plant.low_water or plant.all_light and plant.all_water:
                 self.plants.append(plant)
         except:
-            print(f"{plant.species} can't go in tihs habitat")
+            print(f"{plant.species} can't go in this habitat")
 
     def __str__(self):
         return f'Grassland [{self.id.hex[:8]}]'
+    
+    def test(self, item):
+        try:
+            if "Rodents" in item.foodType and item.flight_speed > -1 \
+                and item.maxFlightSpeed > 150:
+                    return True
+
+            if "Vegetation" in item.foodType and item.flight_speed > -1 \
+                and item.isNocturnal == False:
+                    return True
+            
+        except AttributeError:
+            return False
+
+    def test_plant(self, item):
+        try:
+            if item.full_light and item.low_water or item.all_light and item.all_water:
+                return True
+                
+        except AttributeError:
+            return False

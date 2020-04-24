@@ -31,5 +31,21 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
             if plant.full_light and plant.med_water:
                 self.plants.append(plant)
         except:
-            print(f"{plant.species} can't go in tihs habitat")
+            print(f"{plant.species} can't go in this habitat")
     
+    def test (self, item):
+        try:
+            if "Vegetation" in item.foodType and item.flight_speed > -1 and item.isNocturnal:
+                return True
+            
+
+        except AttributeError:
+            return False
+        
+    def test_plant(self, item):
+        try:
+            if item.full_light and item.med_water:
+                return True
+                
+        except AttributeError:
+            return False

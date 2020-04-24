@@ -6,19 +6,26 @@ def build_environment_menu(arboretum, plant):
     os.system('cls' if os.name == 'nt' else 'clear')
     counter = 1
     new_list = list()
+    new_new_list = list()
+
     for biomes in arboretum.master:
             for biome in biomes:
                 new_list.append(biome)
+
     if len(new_list) > 0:
-        
+
         for biome in new_list:
+            if biome.test_plant(plant):
+                new_new_list.append(biome)
+
+        for biome in new_new_list:
             print(f"{counter}. {biome}")
             counter += 1
         
 
         choice = input("In which biome would you like to add an plant?\n ")
-    
-        new_list[int(choice)-1].add_plant(plant)
+        print(new_new_list)
+        new_new_list[int(choice)-1].add_plant(plant)
     else:
         print("Please annex a habitat before planting \n")
         input("\n\nPress any key to continue...")
