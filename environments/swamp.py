@@ -26,10 +26,20 @@ class Swamp(Environment, IStagnant, IAquatic, Identifiable, IContainsAnimals, IC
         return f"This place has {len(self.inhabitants)} of animals in it"
 
     def addInhabitant(self, item):
+
         if not isinstance(item, IStagnant):
             raise TypeError(f"{item} is not of type IStagnant")
         else:
-            self.inhabitants.append(item)
+            self.animals.append(item)
+    
+    def add_animal(self, animal):
+        try:
 
+            if "Fish" in animal.foodType and animal.isFreshWater and animal.stagnant \
+                or "Insects" in animal.foodType and animal.isFreshWater:
+                self.animals.append(animal)
+        except AttributeError:
+            print("This animal can't be added to this environment.")
+    
     def __str__(self):
         return f'Swamp [{self.id.hex[:8]}]'

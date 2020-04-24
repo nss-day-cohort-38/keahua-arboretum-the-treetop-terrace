@@ -1,14 +1,15 @@
 from animals import Animal
-from interfaces import Identifiable, IFlying, IWalking, IBiome
+from interfaces import Identifiable, IFlying, IWalking, IFoodType, INocturnal
 
-class NeneGoose(Animal, Identifiable, IFlying, IWalking, IBiome):
+class NeneGoose(Animal, Identifiable, IFlying, IWalking, IFoodType, INocturnal):
 
     def __init__(self):
         Animal.__init__(self, "Nene Goose")
         Identifiable.__init__(self)
         IFlying.__init__(self)
         IWalking.__init__(self)
-        IBiome.__init__(self, False, True, False, False, False, False)
+        IFoodType.__init__(self, "Vegetation")
+        INocturnal.__init__(self, False)
 
         self.__food = ("Grass", "Weeds", "Ohelo Berries" )
 

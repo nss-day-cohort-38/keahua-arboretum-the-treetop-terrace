@@ -19,3 +19,23 @@ class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShad
 
     def __str__(self):
         return f'Forest [{self.id.hex[:8]}]'
+
+    def add_animal(self, animal):
+        try:
+            if "Insects" in animal.foodType :
+                try: 
+                    if animal.flight_speed > -1:
+                        if animal.isNocturnal:
+                            self.animals.append(animal)
+                except:
+                    if animal.move_speed > -1:
+                        if "Spider" in animal.food:
+                            self.animals.append(animal)
+
+            if "Rodents" in animal.foodType and animal.flight_speed > -1:
+                self.animals.append(animal)
+
+        
+        except AttributeError:
+            print("This animal can't go in this habitat")
+        

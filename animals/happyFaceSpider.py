@@ -1,12 +1,13 @@
 from animals import Animal
-from interfaces import IWalking, Identifiable, IBiome
+from interfaces import IWalking, Identifiable, IFreshwater, IFoodType
 
-class HappyFaceSpider(Animal, IWalking, Identifiable, IBiome):
+class HappyFaceSpider(Animal, IWalking, Identifiable, IFoodType):
     def __init__(self):
         Animal.__init__(self, "Hawaiian Happy Face Spider")
         IWalking.__init__(self)
         Identifiable.__init__(self)
-        IBiome.__init__(self, False, False, False, False, True, False)
+        IFreshwater.__init__(self)
+        IFoodType.__init__(self, "Insects")
 
         self.__food = ( "Mosquito", "House Fly", "Beetle")
 

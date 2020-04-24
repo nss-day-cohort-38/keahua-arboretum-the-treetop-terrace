@@ -1,72 +1,75 @@
 import os
 import sys
 
-def list_environments_for_animals(arboretum, animal):
+
+def build_environment_menu(arboretum, animal):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    counter = 1
+    new_list = list()
+    for biomes in arboretum.master:
+            for biome in biomes:
+                new_list.append(biome)
+    if len(new_list) > 0:
+        
+        for biome in new_list:
+            print(f"{counter}. {biome}")
+            counter += 1
+        
+
+        choice = input("In which biome would you like to add an animal?\n ")
     
-    if animal.canMountain and animal.canForest:
-        return list_environments(arboretum.forests + arboretum.mountains, animal)
-
-    elif animal.canMountain and animal.canGrassland:
-        return list_environments(arboretum.grasslands + arboretum.mountains, animal)
-
-    elif animal.canMountain and animal.canRiver:
-        return list_environments(arboretum.rivers + arboretum.mountains, animal)
-
-    elif animal.canMountain and animal.canSwamp:
-        return list_environments(arboretum.swamps + arboretum.mountains, animal)
-
-    elif animal.canMountain and animal.canCoastline:
-        return list_environments(arboretum.coastlines + arboretum.mountains, animal)
-
-    elif animal.canGrassland and animal.canForest:
-        return list_environments(arboretum.forests + arboretum.grasslands, animal)
-
-    elif animal.canGrassland and animal.canRiver:
-        return list_environments(arboretum.rivers + arboretum.grasslands, animal)
-
-    elif animal.canGrassland and animal.canSwamp:
-        return list_environments(arboretum.swamps + arboretum.grasslands, animal)
-
-    elif animal.canGrassland and animal.canCoastline:
-        return list_environments(arboretum.coastlines + arboretum.grasslands, animal)
-
-    elif animal.canForest and animal.canRiver:
-        return list_environments(arboretum.rivers + arboretum.forests, animal)
-
-    elif animal.canForest and animal.canSwamp:
-        return list_environments(arboretum.swamps + arboretum.forests, animal)
-
-    elif animal.canForest and animal.canCoastline:
-        return list_environments(arboretum.coastlines + arboretum.forests, animal)
-
-    elif animal.canRiver and animal.canSwamp:
-        return list_environments(arboretum.swamps + arboretum.rivers, animal)
-
-    elif animal.canRiver and animal.canCoastline:
-        return list_environments(arboretum.coastlines + arboretum.rivers, animal)
-
-    elif animal.canCoastline and animal.canSwamp:
-        return list_environments(arboretum.swamps + arboretum.coastlines, animal)
-
-    elif animal.canGrassland:
-        return list_environments(arboretum.grasslands, animal)
-
-    elif animal.canMountain:
-        return list_environments(arboretum.mountains, animal)
-
-    elif animal.canForest:
-        return list_environments(arboretum.forests, animal)
-
-    elif animal.canRiver:
-        return list_environments(arboretum.rivers, animal)
-
-    elif animal.canSwamp:
-        return list_environments(arboretum.swamps, animal)
-
-    elif animal.canCoastline:
-        return list_environments(arboretum.coastlines, animal)
+        new_list[int(choice)-1].add_animal(animal)
+    else:
+        print("Please annex a habitat and release animals before releasing animals \n")
+        input("\n\nPress any key to continue...")
 
 
+
+def list_environments_for_animals(arboretum, animal):
+    locations = set()
+
+    if "Fish" in animal.foodType \
+        and animal.isSaltwater:
+        locations.add(arboretum.coastlines)
+    
+    if "Fish" in animal.foodType and animal.isFreshWater and animal.stagnant \
+        or "Insects" in animal.foodType and animal.isFreshWater:
+        locations.add(arboretum.swamps)
+
+    # if "Insects" in animal.foodType and animal.isFreshWater:
+    #     locations.add(arboretum.swamps)
+    
+    if "Fish" in animal.foodType and animal.isFreshWater:
+        locations.add(arboretum.rivers)
+    
+    if "Rodents" in animal.foodType and animal.flight_speed:
+        locations.add(arboretum.forests)
+
+    if "Insects" in animal.foodType and animal.move_speed:
+        locations.add(arboretum.forests)
+
+    if "Insects" in animal.foodType and animal.flight_speed \
+        and animal.isNocturnal:
+        locations.add(arboretum.forests)
+
+    if "Rodents" in animal.foodType and animal.flight_speed \
+        and animal.maxFlightSpeed > 150:
+        locations.add(arboretum.grasslands)
+
+    if "Vegetation" in animal.foodType and animal.flight_speed \
+        and animal.isNocturnal == False:
+        locations.add(arboretum.grasslands)
+    
+    if "Vegetation" in animal.foodType and animal.flight_speed and animal.isNocturnal:
+        locations.add(arboretum.mountains)
+
+    total_Locations = []
+
+    for location_list in locations:
+        for location in location_list:
+            total_Locations.append(location)
+  
+    list_environments(total_Locations, animal)
 def list_environments (locations, animal):
     counter = 1
     # os.system('cls' if os.name == 'nt' else 'clear')
