@@ -26,10 +26,27 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
 
     def add_plant(self, plant):
         try:
-            if plant.freshwater and plant.requires_current:
+            if plant.high_water and plant.partial_light:
                 self.plants.append(plant)
-        except AttributeError:
-            print("Cannot add plants that require brackish water or stagnant water to a river biome")
+        except:
+            print(f"{plant.species} can't go in this habitat")
 
     def __str__(self):
         return f'River [{self.id.hex[:8]}]'
+
+    def test (self, item):
+        try:
+            if "Fish" in item.foodType and item.isFreshWater:
+                return True
+            
+
+        except AttributeError:
+            return False
+    
+    def test_plant(self, item):
+        try:
+            if item.high_water and item.partial_light:
+                return True
+                
+        except AttributeError:
+            return False

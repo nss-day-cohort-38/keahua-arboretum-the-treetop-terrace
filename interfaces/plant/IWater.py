@@ -1,5 +1,5 @@
 class IWater:
-    def __init__(self, low_level, med_level, high_level, all_level ):
+    def __init__(self, low_level = False, med_level = False, high_level = False, all_level = False ):
         self.low_water = low_level
         self.med_water = med_level
         self.high_water = high_level
