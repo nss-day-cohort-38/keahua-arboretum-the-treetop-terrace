@@ -7,24 +7,35 @@ def build_environment_menu(arboretum, animal):
     counter = 1
     new_list = list()
     new_new_list = list()
+
     for biomes in arboretum.master:
             for biome in biomes:
                 new_list.append(biome)
+                
     if len(new_list) > 0:
-        
         for biome in new_list:
-            if biome.test(animal):
-                new_new_list.append(biome)
+            if biome.animal_capacity > len(biome.animals):
+                
+                if biome.test(animal):
+                    new_new_list.append(biome)
 
+            else:
+                pass
+              
 
         for biome in new_new_list:
-            print(f"{counter}. {biome}")
+            print(f"{counter}. {biome} ({len(biome.animals)}/{biome.animal_capacity} animals)")
             counter += 1
-        
 
-        choice = input("In which biome would you like to add an animal?\n ")
-    
-        new_new_list[int(choice)-1].add_animal(animal)
+        if len(new_new_list) == 0:
+            print(f"Annex a new habitat. No more space")
+            input("\n\nPress any key to continue...")
+
+        else:
+            choice = input("In which biome would you like to add an animal?\n ")
+            new_new_list[int(choice)-1].add_animal(animal)
+
+
     else:
         print("Please annex a habitat before releasing animals. \n")
         input("\n\nPress any key to continue...")

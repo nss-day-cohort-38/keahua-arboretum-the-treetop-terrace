@@ -13,19 +13,27 @@ def build_environment_menu(arboretum, plant):
                 new_list.append(biome)
 
     if len(new_list) > 0:
-
         for biome in new_list:
-            if biome.test_plant(plant):
-                new_new_list.append(biome)
+            if biome.plant_capacity > len(biome.plants):
+                
+                if biome.test_plant(plant):
+                    new_new_list.append(biome)
+
+            else:
+                pass
+
 
         for biome in new_new_list:
-            print(f"{counter}. {biome}")
+            print(f"{counter}. {biome} ({len(biome.plants)}/{biome.plant_capacity} plants)")
             counter += 1
-        
 
-        choice = input("In which biome would you like to add an plant?\n ")
-        print(new_new_list)
-        new_new_list[int(choice)-1].add_plant(plant)
+        if len(new_new_list) == 0:
+            print(f"Annex a new habitat. No more space")
+            input("\n\nPress any key to continue...")
+        
+        else:
+            choice = input("In which biome would you like to add an plant?\n ")
+            new_new_list[int(choice)-1].add_plant(plant)
     else:
         print("Please annex a habitat before planting \n")
         input("\n\nPress any key to continue...")
