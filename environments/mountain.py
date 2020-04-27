@@ -17,7 +17,7 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
         self.animal_capacity = 6
 
     def __str__(self):
-        return f'Mountain [{self.id.hex[:8]}]'
+        return f'Mountain ({getAmountOfPlantsAndAnimals(self)}) [{self.id.hex[:8]}]'
 
     def add_animal(self, animal):
         try:

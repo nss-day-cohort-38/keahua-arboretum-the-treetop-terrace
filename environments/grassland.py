@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from .environment import Environment
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, IRain, IShade, getDuplicatesWithCount
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, IRain, IShade, getAmountOfPlantsAndAnimals
 
 # from animals.
 
@@ -71,32 +71,6 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
                 
         except AttributeError:
             return False
-    
-    def getAmountOfPlantsAndAnimals(self):
-        aNpList = self.animals + self.plants
-        nameList = []
-        for item in aNpList:
-            nameList.append(item.species)
-        if len(nameList) == 0:
-            return ""
-        else:
-            freqDict = getDuplicatesWithCount(nameList)
-            aNpString = ""
-            counter = 1
-            dictLen = len(freqDict.keys())
-            for key,value in freqDict.items():
-                if counter == dictLen:
-                    aNpString += f'{key} {value}'
-                    counter +=1
-                else:
-                    aNpString += f'{key} {value},'
-                    counter +=1
-            return aNpString
 
     def __str__(self):
-        # animal_and plant_string = self.getAmountOfPlantsAndAnimals()
-        total_list = self.animals + self.plants
-        if len(total_list) == 0:
-            return f'Grassland [{self.id.hex[:8]}]'
-        else:
-            return f'Grassland [{self.id.hex[:8]}] [{self.getAmountOfPlantsAndAnimals()}]'
+        return f'Grassland ({getAmountOfPlantsAndAnimals(self)}) [{self.id.hex[:8]}]'

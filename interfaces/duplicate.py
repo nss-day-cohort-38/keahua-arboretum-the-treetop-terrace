@@ -36,3 +36,5 @@ def getAmountOfPlantsAndAnimals(biome):
                     aNpString += f'{key} {value},'
                     counter +=1
             return aNpString
+            
+    

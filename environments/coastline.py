@@ -47,5 +47,6 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
             return False
         
     def __str__(self):
-        return f'Coastline [{self.id.hex[:8]}]'
+        
+        return f'Coastline ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
         

@@ -32,7 +32,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
             print(f"{plant.species} can't go in this habitat")
 
     def __str__(self):
-        return f'River [{self.id.hex[:8]}]'
+        return f'River ({getAmountOfPlantsAndAnimals(self)}) [{self.id.hex[:8]}]'
 
     def test (self, item):
         try:
