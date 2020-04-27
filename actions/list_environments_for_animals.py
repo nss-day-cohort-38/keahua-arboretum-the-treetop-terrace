@@ -1,6 +1,6 @@
 import os
 import sys
-
+from actions.animal_dictionary import count_inhabitants
 
 def build_environment_menu(arboretum, animal):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -24,7 +24,7 @@ def build_environment_menu(arboretum, animal):
               
 
         for biome in new_new_list:
-            print(f"{counter}. {biome} ({len(biome.animals)}/{biome.animal_capacity} animals)")
+            print(f"{counter}. {biome} {count_inhabitants(biome)} ({len(biome.animals)}/{biome.animal_capacity} animals)")
             counter += 1
 
         if len(new_new_list) == 0:
