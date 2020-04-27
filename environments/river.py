@@ -12,7 +12,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
         self.inhabitants = []
         self.plant_capacity = 6
         self.animal_capacity = 12
-      
+        self.name = "River"
 
     def add_animal(self, animal):
         try:

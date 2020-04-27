@@ -16,6 +16,7 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.inhabitants = []
         self.plant_capacity = 3
         self.animal_capacity = 15
+        self.name = "Coastline"
 
 
     def add_animal(self, animal):

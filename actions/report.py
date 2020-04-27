@@ -3,7 +3,7 @@ from arboretum import Arboretum
 def build_facility_report(Arboretum):
     for environments in Arboretum.master:
         for environment in environments:
-            print(environment)
+            print(f"{environment.name} [{environment.id.hex[:8]}]")
             print('''
                     ----- ANIMALS -----
             ''')

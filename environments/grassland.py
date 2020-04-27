@@ -22,6 +22,7 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.animal_capacity = 22
         self.rain = False
         self.shade = False
+        self.name = "Grassland"
         
 
     def animal_count(self):

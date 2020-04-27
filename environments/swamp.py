@@ -20,7 +20,7 @@ class Swamp(Environment, IStagnant, IAquatic, Identifiable, IContainsAnimals, IC
         self.inhabitants = []
         self.plant_capacity = 12
         self.animal_capacity = 8
-        
+        self.name = "Swamp"
 
     def animal_count(self):
         return f"This place has {len(self.inhabitants)} of animals in it"

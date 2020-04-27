@@ -12,7 +12,7 @@ class Forest(Environment, Identifiable, IContainsPlants, IContainsAnimals, IShad
         IShade.__init__(self)
         IRain.__init__(self)
         ITerrestrial.__init__(self)
-
+        self.name = "Forest"
         self.inhabitants = []
         self.plant_capacity = 32
         self.animal_capacity = 20

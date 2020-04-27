@@ -11,7 +11,7 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
         IContainsAnimals.__init__(self)
         ITerrestrial.__init__(self)
         IElevation.__init__(self)
-
+        self.name = "Mountain"
         self.inhabitants = []
         self.plant_capacity = 4
         self.animal_capacity = 6
