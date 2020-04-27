@@ -18,7 +18,9 @@ def build_menu():
     print("3. Feed Animal")
     print("4. Add Plant to Habitat")
     print("5. Display Facility Report")
-    print("6. Exit")
+    print ("6. Life tip of the day")
+    print("7. Wanna see a cat?")
+    print("8. Exit")
     print("Choose a KILLER option.")
 
 
@@ -47,8 +49,31 @@ def main_menu():
     if choice == "5":
         build_facility_report(keahua)
         
-    if choice != "6":
+    if choice == "6":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("________                 __        .___      .__        __     ___.   .__                       .__     ")
+        print("\______ \   ____   _____/  |_    __| _/______|__| ____ |  | __ \_ |__ |  |   ____ _____    ____ |  |__  ")
+        print(" |    |  \ /  _ \ /    \   __\  / __ |\_  __ \  |/    \|  |/ /  | __ \|  | _/ __ \\__  \ _/ ___\|  |  \ ")
+        print(" |    `   (  <_> )   |  \  |   / /_/ | |  | \/  |   |  \    <   | \_\ \  |_\  ___/ / __ \\  \___|   Y  \ ")
+        print("/_______  /\____/|___|  /__|   \____ | |__|  |__|___|  /__|_ \  |___  /____/\___  >____  /\___  >___|  /")
+        print("        \/            \/            \/               \/     \/      \/          \/     \/     \/     \/ ")
+
+        input("\n\nPress any key to continue...")
+
+    if choice == "7":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("   |\---/|")
+        print("   | ,_, |")
+        print("    \_`_/-..----.")
+        print(" ___/ `   ' ,""+ \  sk")
+        print("(__...'   __\    |`.___.';")
+        print("  (_,...'(_,.`__)/'.....+")
+
+        input("\n\nPress any key to continue...")
+
+    if choice != "8":
         main_menu()
+    
 
 main_menu()
 
