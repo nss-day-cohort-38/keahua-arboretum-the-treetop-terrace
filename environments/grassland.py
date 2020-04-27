@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from .environment import Environment
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, IRain, IShade
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, IRain, IShade, getAmountOfPlantsAndAnimals
 
 # from animals.
 
@@ -22,6 +22,7 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.animal_capacity = 22
         self.rain = False
         self.shade = False
+        self.name = "Grassland"
         
 
     def animal_count(self):
@@ -50,9 +51,6 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
                 self.plants.append(plant)
         except:
             print(f"{plant.species} can't go in this habitat")
-
-    def __str__(self):
-        return f'Grassland [{self.id.hex[:8]}]'
     
     def test(self, item):
         try:
@@ -74,3 +72,9 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
                 
         except AttributeError:
             return False
+
+    def __str__(self):
+        if len(self.animals + self.plants) == 0:
+            return f'Grassland [{self.id.hex[:8]}]'
+        else :
+            return f'Grassland ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'

@@ -1,5 +1,5 @@
 from .environment import Environment
-from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, ISaltwater
+from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, ITerrestrial, ISaltwater, getAmountOfPlantsAndAnimals
 
 # from animals.
 
@@ -16,6 +16,7 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
         self.inhabitants = []
         self.plant_capacity = 3
         self.animal_capacity = 15
+        self.name = "Coastline"
 
 
     def add_animal(self, animal):
@@ -47,5 +48,8 @@ class Coastline(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
             return False
         
     def __str__(self):
-        return f'Coastline [{self.id.hex[:8]}]'
+        if len(self.animals + self.plants) == 0:
+            return f'Coastline [{self.id.hex[:8]}]'
+        else :
+            return f'Coastline ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
         

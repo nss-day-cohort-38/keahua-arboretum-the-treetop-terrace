@@ -1,5 +1,6 @@
 import os
 import sys
+from interfaces import RepresentsInt, raise_val_error
 
 
 def build_environment_menu(arboretum, plant):
@@ -33,8 +34,14 @@ def build_environment_menu(arboretum, plant):
         
         else:
             choice = input("In which biome would you like to add an plant?\n ")
-            new_new_list[int(choice)-1].add_plant(plant)
-    else:
+            if RepresentsInt(choice) == True:
+                if int(choice) < len(new_new_list) + 1:
+                    new_new_list[int(choice)-1].add_plant(plant)
+                else:
+                    if raise_val_error():
+                        return ""
+                        
+    else:   
         print("Please annex a habitat before planting \n")
         input("\n\nPress any key to continue...")
 
@@ -97,13 +104,7 @@ def build_environment_menu(arboretum, plant):
 
 
 
-def RepresentsInt(s):
-    try: 
-        int(s)
-        return True
-    except ValueError:
-        print ("Please enter a number...")
-        input("\n\nPress any key to continue...")
+
 
 
         # print(type(int(choice)))

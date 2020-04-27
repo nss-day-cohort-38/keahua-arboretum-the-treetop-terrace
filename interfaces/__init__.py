@@ -19,3 +19,15 @@ from .animal import IFoodType
 from .animal import IMaxFlightSpeed
 from .animal import INocturnal
 
+from .duplicate import getAmountOfPlantsAndAnimals
+
+
+from .duplicate import getDuplicatesWithCount
+
+from .test_number import RepresentsInt
+
+from .test_number import choice_in_range
+
+from .test_number import raise_val_error
+
+

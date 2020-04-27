@@ -7,6 +7,7 @@ from animals import Opeapea
 from animals import HappyFaceSpider
 from animals import GoldDustGecko
 from .list_environments_for_animals import build_environment_menu
+from interfaces import raise_val_error, RepresentsInt
 
 import os
 
@@ -24,37 +25,43 @@ def release_animal(arboretum):
 
     choice = input("Choose animal to release > ")
 
-    if choice == "1":
-        animal = RiverDolphin()
-        build_environment_menu(arboretum, animal)
+    if RepresentsInt(choice) == True:
+        if int(choice) < 9:
 
-    if choice == "2":
-        animal = NeneGoose()
-        build_environment_menu(arboretum, animal)
+            if choice == "1":
+                animal = RiverDolphin()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "3":
-        animal = Kikakapu()
-        build_environment_menu(arboretum, animal)
+            if choice == "2":
+                animal = NeneGoose()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "4":
-        animal = Pueo()
-        build_environment_menu(arboretum, animal)
+            if choice == "3":
+                animal = Kikakapu()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "5":
-        animal = Ulae()
-        build_environment_menu(arboretum, animal)
+            if choice == "4":
+                animal = Pueo()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "6":
-        animal = Opeapea()
-        build_environment_menu(arboretum, animal)
+            if choice == "5":
+                animal = Ulae()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "7":
-        animal = HappyFaceSpider()
-        build_environment_menu(arboretum, animal)
+            if choice == "6":
+                animal = Opeapea()
+                build_environment_menu(arboretum, animal)
 
-    if choice == "8":
-        animal = GoldDustGecko()
-        build_environment_menu(arboretum, animal)
+            if choice == "7":
+                animal = HappyFaceSpider()
+                build_environment_menu(arboretum, animal)
+
+            if choice == "8":
+                animal = GoldDustGecko()
+                build_environment_menu(arboretum, animal)  
+        else:
+            if raise_val_error():
+                return ""                     
 
 
     # print("Release the animal into which biome?")

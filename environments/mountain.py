@@ -1,5 +1,5 @@
 from .environment import Environment
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial, IElevation
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IShade, IRain, ITerrestrial, IElevation, getAmountOfPlantsAndAnimals
 
 
 class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITerrestrial, IElevation):
@@ -11,13 +11,16 @@ class Mountain(Environment, Identifiable, IContainsPlants, IContainsAnimals, ITe
         IContainsAnimals.__init__(self)
         ITerrestrial.__init__(self)
         IElevation.__init__(self)
-
+        self.name = "Mountain"
         self.inhabitants = []
         self.plant_capacity = 4
         self.animal_capacity = 6
 
     def __str__(self):
-        return f'Mountain [{self.id.hex[:8]}]'
+        if len(self.animals + self.plants) == 0:
+            return f'Mountain [{self.id.hex[:8]}]'
+        else :
+            return f'Mountain ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
 
     def add_animal(self, animal):
         try:

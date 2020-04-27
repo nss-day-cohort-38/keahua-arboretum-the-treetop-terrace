@@ -1,4 +1,4 @@
-from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IFreshwater
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, getAmountOfPlantsAndAnimals
 from animals import RiverDolphin
 
 class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
@@ -12,7 +12,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
         self.inhabitants = []
         self.plant_capacity = 6
         self.animal_capacity = 12
-      
+        self.name = "River"
 
     def add_animal(self, animal):
         try:
@@ -32,7 +32,10 @@ class River(IContainsAnimals, IContainsPlants, Identifiable, IFreshwater):
             print(f"{plant.species} can't go in this habitat")
 
     def __str__(self):
-        return f'River [{self.id.hex[:8]}]'
+        if len(self.animals + self.plants) == 0:
+            return f'River [{self.id.hex[:8]}]'
+        else :
+            return f'River ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
 
     def test (self, item):
         try:

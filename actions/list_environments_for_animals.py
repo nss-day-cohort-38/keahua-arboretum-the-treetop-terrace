@@ -1,6 +1,6 @@
 import os
 import sys
-
+from interfaces import raise_val_error, RepresentsInt
 
 def build_environment_menu(arboretum, animal):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -33,7 +33,12 @@ def build_environment_menu(arboretum, animal):
 
         else:
             choice = input("In which biome would you like to add an animal?\n ")
-            new_new_list[int(choice)-1].add_animal(animal)
+            if RepresentsInt(choice) == True:
+                if int(choice) < len(new_new_list) + 1:
+                    new_new_list[int(choice)-1].add_animal(animal)
+                else:
+                    if raise_val_error():
+                        return ""
 
 
     else:

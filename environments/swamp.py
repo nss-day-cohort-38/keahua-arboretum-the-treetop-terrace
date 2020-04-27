@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from .environment import Environment
-from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, IStagnant, ITerrestrial
+from interfaces import IAquatic, Identifiable, IContainsAnimals, IContainsPlants, IFreshwater, IStagnant, ITerrestrial, getAmountOfPlantsAndAnimals
 
 # from animals.
 
@@ -20,7 +20,7 @@ class Swamp(Environment, IStagnant, IAquatic, Identifiable, IContainsAnimals, IC
         self.inhabitants = []
         self.plant_capacity = 12
         self.animal_capacity = 8
-        
+        self.name = "Swamp"
 
     def animal_count(self):
         return f"This place has {len(self.inhabitants)} of animals in it"
@@ -49,7 +49,10 @@ class Swamp(Environment, IStagnant, IAquatic, Identifiable, IContainsAnimals, IC
             print(f"{plant.species} can't go in this habitat")
     
     def __str__(self):
-        return f'Swamp [{self.id.hex[:8]}]'
+        if len(self.animals + self.plants) == 0:
+            return f'Swamp [{self.id.hex[:8]}]'
+        else :
+            return f'Swamp ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
 
     def test(self, item):
         try:
