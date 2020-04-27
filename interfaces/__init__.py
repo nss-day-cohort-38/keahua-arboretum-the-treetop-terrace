@@ -24,4 +24,10 @@ from .duplicate import getAmountOfPlantsAndAnimals
 
 from .duplicate import getDuplicatesWithCount
 
+from .test_number import RepresentsInt
+
+from .test_number import choice_in_range
+
+from .test_number import raise_val_error
+
 

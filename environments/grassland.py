@@ -73,4 +73,7 @@ class Grassland(Environment, Identifiable, IContainsAnimals, IContainsPlants, IT
             return False
 
     def __str__(self):
-        return f'Grassland ({getAmountOfPlantsAndAnimals(self)}) [{self.id.hex[:8]}]'
+        if len(self.animals + self.plants) == 0:
+            return f'Grassland [{self.id.hex[:8]}]'
+        else :
+            return f'Grassland ({getAmountOfPlantsAndAnimals(self)})[{self.id.hex[:8]}]'
